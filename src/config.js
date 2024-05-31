@@ -8,7 +8,7 @@ function getConfig(env) {
         networkId: 'mainnet',
         nodeUrl: 'https://rpc.mainnet.near.org',
         contractName: 'sputnik-dao.near',
-        walletUrl: 'https://wallet.near.org',
+        walletUrl: 'https://app.mynearwallet.com/',
         helperUrl: 'https://helper.mainnet.near.org',
         explorerUrl: 'https://explorer.mainnet.near.org',
         pk: '2gtDEwdLuUBawzFLAnCS9gUso3Ph76bRzMpVrtb66f3J',
