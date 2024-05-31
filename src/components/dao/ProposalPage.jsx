@@ -31,6 +31,7 @@ import Footer from '../shared/Footer';
 import { useParams } from 'react-router-dom';
 import Decimal from 'decimal.js';
 import ReactJson from 'react-json-view';
+import {toPolicyLabel} from '../../utils/policy';
 
 export const Proposal = (props) => {
   const [showSpinner, setShowSpinner] = useState(false);
@@ -200,9 +201,9 @@ export const Proposal = (props) => {
         role.permissions.includes(permission)
     );
 
-  const canApprove = canVote('*:VoteApprove');
-  const canReject = canVote('*:VoteReject');
-  const canRemove = canVote('*:VoteRemove');
+  const canApprove = canVote('*:VoteApprove') || canVote(`${toPolicyLabel(props.data.kind)}:VoteApprove`);
+  const canReject = canVote('*:VoteReject') || canVote(`${toPolicyLabel(props.data.kind)}:VoteReject`);
+  const canRemove = canVote('*:VoteRemove') || canVote(`${toPolicyLabel(props.data.kind)}:VoteRemove`);
 
   return (
     <div className="proposal-item">
